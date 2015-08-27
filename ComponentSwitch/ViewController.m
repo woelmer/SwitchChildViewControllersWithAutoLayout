@@ -9,6 +9,8 @@
 #import "ViewController.h"
 
 @interface ViewController ()
+@property (weak, nonatomic) IBOutlet UIView *containerViewA;
+@property (weak, nonatomic) IBOutlet UIView *containerViewB;
 
 @end
 
@@ -16,12 +18,20 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+- (IBAction)showComponent:(UISegmentedControl *)sender {
+    if (sender.selectedSegmentIndex == 0) {
+        [UIView animateWithDuration:(0.5) animations:^{
+            self.containerViewA.alpha = 1;
+            self.containerViewB.alpha = 0;
+        }];
+    } else {
+        [UIView animateWithDuration:(0.5) animations:^{
+            self.containerViewA.alpha = 0;
+            self.containerViewB.alpha = 1;
+        }];
+    }
 }
 
 @end
