@@ -7,7 +7,7 @@
         <!--First View Controller-->
         <scene sceneID="ufC-wZ-h7g">
             <objects>
-                <viewController title="First View Controller" id="vXZ-lx-hvc" customClass="ViewControllerSwift" customModule="ComponentSwitch" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="First View Controller" id="vXZ-lx-hvc" customClass="ViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="jyV-Pf-zRb"/>
                         <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
@@ -59,29 +59,16 @@
                                     </mask>
                                 </variation>
                             </view>
-                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="llP-AB-Gcp" userLabel="Container View A">
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="llP-AB-Gcp">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                 <connections>
-                                    <segue destination="mAZ-t4-Qh0" kind="embed" id="Pxs-Ms-YAF"/>
-                                </connections>
-                            </containerView>
-                            <containerView opaque="NO" alpha="0.0" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ojM-HT-rKb" userLabel="Container View B">
-                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
-                                <connections>
-                                    <segue destination="qUn-Gy-uDe" kind="embed" id="NHe-EM-DOK"/>
+                                    <segue destination="mAZ-t4-Qh0" kind="embed" identifier="embedComponentA" id="ngi-UU-e6J"/>
                                 </connections>
                             </containerView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="llP-AB-Gcp" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="4qW-m0-RSG"/>
-                            <constraint firstItem="ojM-HT-rKb" firstAttribute="centerX" secondItem="llP-AB-Gcp" secondAttribute="centerX" constant="12" id="928-gc-hZN">
-                                <variation key="widthClass=compact" constant="0.0"/>
-                            </constraint>
-                            <constraint firstItem="ojM-HT-rKb" firstAttribute="height" secondItem="llP-AB-Gcp" secondAttribute="height" id="Hat-oV-fB2"/>
-                            <constraint firstItem="ojM-HT-rKb" firstAttribute="centerY" secondItem="llP-AB-Gcp" secondAttribute="centerY" constant="-120" id="UTd-el-UWP">
-                                <variation key="widthClass=compact" constant="0.0"/>
-                            </constraint>
                             <constraint firstAttribute="trailing" secondItem="llP-AB-Gcp" secondAttribute="trailing" id="YuK-YY-5L7"/>
                             <constraint firstAttribute="trailing" secondItem="0sC-i9-xCp" secondAttribute="trailing" id="c5J-9S-DrF"/>
                             <constraint firstItem="0sC-i9-xCp" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" constant="54" id="e6z-2X-CBS">
@@ -89,7 +76,6 @@
                             </constraint>
                             <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="0sC-i9-xCp" secondAttribute="bottom" id="liP-rS-hRU"/>
                             <constraint firstItem="llP-AB-Gcp" firstAttribute="top" secondItem="kh9-bI-dsS" secondAttribute="top" id="nku-8x-rO9"/>
-                            <constraint firstItem="ojM-HT-rKb" firstAttribute="width" secondItem="llP-AB-Gcp" secondAttribute="width" id="pny-vf-Ld4"/>
                             <constraint firstItem="0sC-i9-xCp" firstAttribute="top" secondItem="llP-AB-Gcp" secondAttribute="bottom" constant="44" id="wcb-7G-sG2">
                                 <variation key="widthClass=compact" constant="0.0"/>
                             </constraint>
@@ -98,17 +84,12 @@
                             <mask key="subviews">
                                 <exclude reference="0sC-i9-xCp"/>
                                 <exclude reference="llP-AB-Gcp"/>
-                                <exclude reference="ojM-HT-rKb"/>
                             </mask>
                             <mask key="constraints">
                                 <exclude reference="liP-rS-hRU"/>
                                 <exclude reference="4qW-m0-RSG"/>
                                 <exclude reference="YuK-YY-5L7"/>
                                 <exclude reference="nku-8x-rO9"/>
-                                <exclude reference="928-gc-hZN"/>
-                                <exclude reference="Hat-oV-fB2"/>
-                                <exclude reference="UTd-el-UWP"/>
-                                <exclude reference="pny-vf-Ld4"/>
                                 <exclude reference="c5J-9S-DrF"/>
                                 <exclude reference="e6z-2X-CBS"/>
                                 <exclude reference="wcb-7G-sG2"/>
@@ -118,17 +99,12 @@
                             <mask key="subviews">
                                 <include reference="0sC-i9-xCp"/>
                                 <include reference="llP-AB-Gcp"/>
-                                <include reference="ojM-HT-rKb"/>
                             </mask>
                             <mask key="constraints">
                                 <include reference="liP-rS-hRU"/>
                                 <include reference="4qW-m0-RSG"/>
                                 <include reference="YuK-YY-5L7"/>
                                 <include reference="nku-8x-rO9"/>
-                                <include reference="928-gc-hZN"/>
-                                <include reference="Hat-oV-fB2"/>
-                                <include reference="UTd-el-UWP"/>
-                                <include reference="pny-vf-Ld4"/>
                                 <include reference="c5J-9S-DrF"/>
                                 <include reference="e6z-2X-CBS"/>
                                 <include reference="wcb-7G-sG2"/>
@@ -139,8 +115,7 @@
                         <barButtonItem key="rightBarButtonItem" title="Next" id="SKD-kP-qvF"/>
                     </navigationItem>
                     <connections>
-                        <outlet property="containerViewA" destination="llP-AB-Gcp" id="kZE-cC-tHP"/>
-                        <outlet property="containerViewB" destination="ojM-HT-rKb" id="lnm-hR-tsO"/>
+                        <outlet property="containerView" destination="llP-AB-Gcp" id="fxW-87-sXA"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
@@ -199,7 +174,7 @@
         <!--View Controller-->
         <scene sceneID="ceR-Cr-NcV">
             <objects>
-                <viewController automaticallyAdjustsScrollViewInsets="NO" id="qUn-Gy-uDe" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="componentB" automaticallyAdjustsScrollViewInsets="NO" id="qUn-Gy-uDe" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="VkZ-yk-8fm"/>
                         <viewControllerLayoutGuide type="bottom" id="cFL-gU-H2k"/>
@@ -217,8 +192,12 @@
                         </subviews>
                         <color key="backgroundColor" red="0.53725490200000003" green="0.54901960780000003" blue="0.8980392157" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstAttribute="centerY" secondItem="ng9-k3-C7w" secondAttribute="centerY" constant="0.5" id="mTY-U1-dgW"/>
-                            <constraint firstAttribute="centerX" secondItem="ng9-k3-C7w" secondAttribute="centerX" constant="-0.5" id="vjF-vB-1Ns"/>
+                            <constraint firstAttribute="centerY" secondItem="ng9-k3-C7w" secondAttribute="centerY" constant="0.5" id="mTY-U1-dgW">
+                                <variation key="widthClass=compact" constant="0.0"/>
+                            </constraint>
+                            <constraint firstAttribute="centerX" secondItem="ng9-k3-C7w" secondAttribute="centerX" constant="-0.5" id="vjF-vB-1Ns">
+                                <variation key="widthClass=compact" constant="0.0"/>
+                            </constraint>
                         </constraints>
                         <variation key="default">
                             <mask key="subviews">
@@ -240,10 +219,13 @@
                         </variation>
                     </view>
                     <toolbarItems/>
+                    <nil key="simulatedStatusBarMetrics"/>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="400" height="500"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9bs-Y7-5f2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1462.5" y="283"/>
+            <point key="canvasLocation" x="1462.5" y="288"/>
         </scene>
     </scenes>
 </document>

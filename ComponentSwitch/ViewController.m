@@ -9,8 +9,8 @@
 #import "ViewController.h"
 
 @interface ViewController ()
-@property (weak, nonatomic) IBOutlet UIView *containerViewA;
-@property (weak, nonatomic) IBOutlet UIView *containerViewB;
+@property (weak, nonatomic) IBOutlet UIView *containerView;
+@property (weak, nonatomic) UIViewController *initialViewController;
 
 @end
 
@@ -22,16 +22,16 @@
 
 - (IBAction)showComponent:(UISegmentedControl *)sender {
     if (sender.selectedSegmentIndex == 0) {
-        [UIView animateWithDuration:(0.5) animations:^{
-            self.containerViewA.alpha = 1;
-            self.containerViewB.alpha = 0;
-        }];
     } else {
-        [UIView animateWithDuration:(0.5) animations:^{
-            self.containerViewA.alpha = 0;
-            self.containerViewB.alpha = 1;
-        }];
     }
 }
+
+- (void)performSegueWithIdentifier:(NSString *)identifier sender:(id)sender {
+    if ([identifier isEqualToString:@"embedComponentA"]) {
+        self.initialViewController =
+    }
+    [super performSegueWithIdentifier:identifier sender:sender];
+}
+
 
 @end
