@@ -168,6 +168,8 @@
 		CB3A63AA1B5474AE00E21A2D /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftMigration = 0700;
+				LastSwiftUpdateCheck = 0700;
 				LastUpgradeCheck = 0640;
 				ORGANIZATIONNAME = atomicobject;
 				TargetAttributes = {
