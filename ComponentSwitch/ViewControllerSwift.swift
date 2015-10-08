@@ -30,9 +30,4 @@ class ViewControllerSwift: UIViewController {
         }
     }
     
-    override func performSegueWithIdentifier(identifier: String, sender: AnyObject?) {
-        if let segueIdentifier = identifier {
-            
-        }
-    }
 }
